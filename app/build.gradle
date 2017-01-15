@@ -1,14 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 android {
-    signingConfigs {
-        SmartStock {
-            keyAlias 'SmartStock'
-            keyPassword 'sinkinchan123'
-            storeFile file('/Users/apple/Desktop/key/SmartStock.jks')
-            storePassword 'sinkinchan123'
-        }
-    }
+
     compileSdkVersion 24
     buildToolsVersion '24.0.2'
     defaultConfig {
