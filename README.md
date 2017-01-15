@@ -10,6 +10,11 @@
 但是我又懒得改,只有股票详情那里是用了.
 #智能选股Sdk
 https://github.com/momo145/StockSdk
+#通讯类
+https://github.com/momo145/TransportModule
+#服务端
+https://github.com/momo145/SmartStockServer
+MinaConstant 这个类修改连接ip,你也可以改成配置文件
 #screenshot
 ![](https://github.com/momo145/SmartStock/blob/master/screenshot/S61120-112355.jpg)
 ![](https://github.com/momo145/SmartStock/blob/master/screenshot/S61120-112401.jpg)
