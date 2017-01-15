@@ -8,6 +8,8 @@
 #重要
 这个app用到了Android 的DataBinding 但是里面好多地方我没有使用 Observable 来控制view的刷新,而是直接调用刷新,这样是不好的,会导致性能问题
 但是我又懒得改,只有股票详情那里是用了
+#sdk
+- [StockSdk](https://github.com/momo145/StockSdk/)
 #screenshot
 ![](https://github.com/momo145/SmartStock/blob/master/screenshot/S61120-112355.jpg)
 ![](https://github.com/momo145/SmartStock/blob/master/screenshot/S61120-112401.jpg)
