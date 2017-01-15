@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="269dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_style"
+    android:orientation="vertical">
+
+    <!--换手率-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@color/c8">
+
+        <TextView
+            android:id="@+id/tvCurrentValue"
+            style="@style/tv_c2_s3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp4"
+            android:layout_marginRight="@dimen/dp10" />
+
+        <com.app.sinkinchan.smartstock.views.SlideSelectView
+            android:id="@+id/change_slideSelectView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp80"
+            android:layout_below="@+id/tvCurrentValue"
+            android:layout_centerHorizontal="true"
+            android:background="@color/c8"
+            app:circleCount="4"
+            app:isMoveMode="true"
+            app:isShowScale="true"
+            app:isShowScaleText="true"
+            app:lineColor="@color/c5"
+            app:myTextColor="@color/c2">
+
+        </com.app.sinkinchan.smartstock.views.SlideSelectView>
+
+
+    </RelativeLayout>
+    <!--涨幅-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:background="@color/c8">
+
+        <TextView
+            android:id="@+id/tvUpCurrentValue"
+            style="@style/tv_c2_s3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp4"
+            android:layout_marginRight="@dimen/dp10" />
+
+        <com.app.sinkinchan.smartstock.views.SlideSelectView
+            android:id="@+id/up_slideSelectView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp80"
+            android:layout_below="@+id/tvUpCurrentValue"
+            android:layout_centerHorizontal="true"
+            android:background="@color/c8"
+            app:circleCount="4"
+            app:isMoveMode="true"
+            app:isShowScale="true"
+            app:isShowScaleText="true"
+            app:lineColor="@color/c5"
+            app:myTextColor="@color/c2">
+
+        </com.app.sinkinchan.smartstock.views.SlideSelectView>
+
+
+    </RelativeLayout>
+    <!--量比-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:background="@color/c8">
+
+        <TextView
+            android:id="@+id/tvLBCurrentValue"
+            style="@style/tv_c2_s3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp4"
+            android:layout_marginRight="@dimen/dp10" />
+
+        <com.app.sinkinchan.smartstock.views.SlideSelectView
+            android:id="@+id/lb_slideSelectView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp80"
+            android:layout_below="@+id/tvLBCurrentValue"
+            android:layout_centerHorizontal="true"
+            android:background="@color/c8"
+            app:circleCount="4"
+            app:isMoveMode="true"
+            app:isShowScale="true"
+            app:isShowScaleText="true"
+            app:lineColor="@color/c5"
+            app:myTextColor="@color/c2">
+
+        </com.app.sinkinchan.smartstock.views.SlideSelectView>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

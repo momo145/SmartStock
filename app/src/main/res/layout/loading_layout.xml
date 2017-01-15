@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="?attr/actionBarSize">
+
+    <com.romainpiel.shimmer.ShimmerTextView
+        android:id="@+id/shimmer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/c5"
+        android:textSize="30sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/btn_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
+        android:drawablePadding="@dimen/dp10"
+        android:drawableTop="@mipmap/reload"
+        android:gravity="center"
+        android:text="@string/reload_text"
+        android:textColor="@color/c5"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_none"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:drawableLeft="@mipmap/ic_warning"
+        android:drawablePadding="@dimen/dp10"
+        android:gravity="center"
+        android:text="@string/no_matching_stocks_text"
+        android:textColor="@color/c1"
+        android:visibility="gone" />
+
+
+</FrameLayout>

@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ad_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp10"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/tv_ad_msg"
+        style="@style/tv_c2_s3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp5"
+        android:text="@string/ad_msg_text" />
+
+    <LinearLayout
+        android:id="@+id/ll_banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:layout_below="@+id/tv_ad_msg"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"></LinearLayout>
+</RelativeLayout>
+

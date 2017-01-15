@@ -1,0 +1,251 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/md_red_a400</item>
+        <item name="colorPrimaryDark">@color/md_red_a700</item>
+        <item name="colorAccent">@color/c9</item>
+        <item name="popupMenuStyle">@style/Theme.PopupMenu</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="OverFlowMenuTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="overlapAnchor">false</item>
+    </style>
+
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/c9</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="Theme.PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">@color/c8</item>
+        <item name="android:popupAnimationStyle">@style/PopupAnimation</item>
+    </style>
+
+    <style name="PopupAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/popup_menu_show</item>
+        <item name="android:windowExitAnimation">@anim/popup_menu_hide</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--标题-->
+    <style name="tv_title_s1_c1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/md_white</item>
+    </style>
+    <!--价格-->
+    <style name="tv_price_style">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/md_red_600</item>
+    </style>
+    <!--价格-->
+    <style name="tv_updown_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/md_red_600</item>
+    </style>
+    <!--价格-->
+    <style name="tv_stock_msg_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:gravity">center|left</item>
+    </style>
+
+    <style name="BaseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFrame">@null</item>
+
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+
+    </style>
+    <!-- BottomDialog -->
+    <style name="CommonDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:elevation">@dimen/dp5</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c5_s3">
+        <item name="android:textColor">@color/c5</item>
+        <item name="android:textSize">@dimen/s3</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c5_s2">
+        <item name="android:textColor">@color/c5</item>
+        <item name="android:textSize">@dimen/s2</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c4_s1">
+        <item name="android:textColor">@color/c4</item>
+        <item name="android:textSize">@dimen/s1</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c5_s1">
+        <item name="android:textColor">@color/c5</item>
+        <item name="android:textSize">@dimen/s1</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c8_s3">
+        <item name="android:textColor">@color/c8</item>
+        <item name="android:textSize">@dimen/s3</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c8_s4">
+        <item name="android:textColor">@color/c8</item>
+        <item name="android:textSize">@dimen/s4</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c4_s3">
+        <item name="android:textColor">@color/c4</item>
+        <item name="android:textSize">@dimen/s3</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c4_s2">
+        <item name="android:textColor">@color/c4</item>
+        <item name="android:textSize">@dimen/s2</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c1_s3">
+        <item name="android:textColor">@color/c1</item>
+        <item name="android:textSize">@dimen/s3</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c1_s4">
+        <item name="android:textColor">@color/c1</item>
+        <item name="android:textSize">@dimen/s4</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c6_s1">
+        <item name="android:textColor">@color/c6</item>
+        <item name="android:textSize">@dimen/s1</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c6_s2">
+        <item name="android:textColor">@color/c6</item>
+        <item name="android:textSize">@dimen/s2</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c9_s4">
+        <item name="android:textColor">@color/c9</item>
+        <item name="android:textSize">@dimen/s4</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c2_s4">
+        <item name="android:textColor">@color/c2</item>
+        <item name="android:textSize">@dimen/s4</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c2_s2">
+        <item name="android:textColor">@color/c2</item>
+        <item name="android:textSize">@dimen/s2</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c2_s3">
+        <item name="android:textColor">@color/c2</item>
+        <item name="android:textSize">@dimen/s3</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c9_s3">
+        <item name="android:textColor">@color/c9</item>
+        <item name="android:textSize">@dimen/s3</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c9_s2">
+        <item name="android:textColor">@color/c9</item>
+        <item name="android:textSize">@dimen/s2</item>
+    </style>
+    <!--TextView 样式-->
+    <style name="tv_c8_s2">
+        <item name="android:textColor">@color/c8</item>
+        <item name="android:textSize">@dimen/s2</item>
+    </style>
+
+    <!--TextView 样式-->
+    <style name="third_login_tv" parent="tv_c8_s2">
+        <item name="android:textColor">@color/c8_2</item>
+    </style>
+    <!--内容-->
+    <style name="tv_content_s1_c1">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/md_white</item>
+    </style>
+    <!--指标 textView-->
+    <style name="tv_quota">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <style name="tv_quota_green" parent="tv_quota">
+        <item name="android:textColor">@color/md_green_500</item>
+    </style>
+
+    <style name="tv_quota_red" parent="tv_quota">
+        <item name="android:textColor">@color/md_red_600</item>
+    </style>
+
+    <!--指标 textView-->
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <!--  <item name="android:windowExitAnimation">@anim/push_bottom_out</item> -->
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <!-- 设置未浮动窗口 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 设置无边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置完全透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置屏幕变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="myDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+    </style>
+</resources>

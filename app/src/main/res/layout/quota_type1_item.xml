@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"></import>
+
+        <variable
+            name="quotaType1"
+            type="com.sinkinchan.stock.sdk.bean.QuotaStockPage.QuotaStockType1.DataBean"></variable>
+
+        <variable
+            name="stockUtil"
+            type="com.app.sinkinchan.smartstock.utils.StockUtil"></variable>
+
+
+    </data>
+
+    <LinearLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="@{(view)->stockUtil.showStockDetail(view,quotaType1.code,quotaType1.name,String.valueOf(quotaType1.open))}"
+            android:transitionName="cardView"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardElevation="8dp">
+
+            <ImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/dp5"
+                android:layout_marginTop="@dimen/dp5"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:onClick="@{(view)->stockUtil.deleteStock(view,quotaType1.code,quotaType1.name)}"
+                android:padding="@dimen/dp5"
+                android:src="@mipmap/card_view_close" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{quotaType1.name}"
+                    android:textSize="@dimen/tv_16" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        style="@style/tv_price_style"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:text="@{String.valueOf(quotaType1.price)}"
+                        android:textColor="@{stockUtil.isUp(quotaType1.percent)? @color/stock_red:@color/stock_green}" />
+                    <!--上涨的价格和涨幅-->
+                    <TextView
+                        android:id="@+id/tv_updown"
+                        style="@style/tv_updown_style"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/tv_price"
+                        android:text="@{stockUtil.getUpOrDown(quotaType1.updown,quotaType1.percent,quotaType1.percent)}"
+                        android:textColor="@{stockUtil.isUp(quotaType1.percent)? @color/stock_red:@color/stock_green}" />
+
+                    <!--当天最高价格-->
+                    <TextView
+                        android:id="@+id/tv_height"
+                        style="@style/tv_stock_msg_style"
+                        android:layout_toEndOf="@+id/tv_price"
+                        android:text="@{stockUtil.getHigh(quotaType1.high)}" />
+                    <!--当天最低价格-->
+                    <TextView
+                        android:id="@+id/tv_low"
+                        style="@style/tv_stock_msg_style"
+                        android:layout_below="@+id/tv_height"
+                        android:layout_toEndOf="@+id/tv_updown"
+                        android:text="@{stockUtil.getLow(quotaType1.low)}" />
+                    <!--开盘价格-->
+                    <TextView
+                        android:id="@+id/tv_open"
+                        style="@style/tv_stock_msg_style"
+                        android:layout_toEndOf="@+id/tv_height"
+                        android:text="@{stockUtil.getOpen(quotaType1.open)}" />
+                    <!--换手率-->
+                    <!-- <TextView
+                         android:id="@+id/tv_change"
+                         style="@style/tv_stock_msg_style"
+                         android:layout_below="@+id/tv_open"
+                         android:layout_toEndOf="@+id/tv_low"
+                         android:text="换 &#45;&#45;&#45;&#45;" />-->
+                    <!--量-->
+                    <TextView
+                        android:id="@+id/tv_volume"
+                        android:layout_width="70dp"
+                        android:layout_height="25dp"
+                        android:layout_toEndOf="@+id/tv_open"
+                        android:gravity="center|left"
+                        android:text="@{stockUtil.getVolume(quotaType1.volume)}"
+                        android:textSize="12sp" />
+                    <!--额-->
+                    <TextView
+                        android:id="@+id/tv_turnover"
+                        style="@style/tv_stock_msg_style"
+                        android:layout_below="@+id/tv_open"
+                        android:layout_toEndOf="@+id/tv_low"
+                        android:text="@{stockUtil.getTurnover(quotaType1.turnover)}" />
+                </RelativeLayout>
+
+                <!--  <TextView
+                      android:id="@+id/tv_message"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="20dp"
+                      android:text="换手率17.88%涨幅3.40%量比1.48"
+                      android:textSize="@dimen/tv_14" />-->
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:lineSpacingExtra="@dimen/dp5"
+                    android:text="@{stockUtil.showQuotaType1Message(quotaType1.macd,quotaType1.vol,quotaType1.close)}"
+                    android:textColor="@color/c1"
+                    android:textSize="@dimen/s3" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/btn_ad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="?android:selectableItemBackground"
+                        android:clickable="true"
+                        android:onClick="@{(view)->stockUtil.showAD()}"
+                        android:padding="@dimen/dp10"
+                        android:src="@mipmap/icon_ad"
+                        android:visibility="@{stockUtil.isShowAD(quotaType1.code) ? View.VISIBLE : View.GONE}" />
+                    <Button
+                        android:id="@+id/btn_notices"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/btn_history_price"
+                        android:onClick="@{(view)->stockUtil.showNotices(view,quotaType1.code,quotaType1.name)}"
+                        android:text="公告"
+                        android:textColor="@color/wheel_btn_color"
+                        android:textSize="@dimen/tv_12" />
+
+                    <Button
+                        android:id="@+id/btn_history_price"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/btn_more"
+                        android:onClick="@{(view)->stockUtil.showHistoryPrice(view,quotaType1.code,quotaType1.name)}"
+                        android:text="历史价格"
+                        android:textColor="@color/wheel_btn_color"
+                        android:textSize="@dimen/tv_12" />
+
+                    <ImageView
+                        android:id="@+id/btn_more"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="?android:selectableItemBackground"
+                        android:clickable="true"
+                        android:onClick="@{(view)->stockUtil.showMoreMenu(view,quotaType1.code,quotaType1.name)}"
+                        android:padding="@dimen/dp5"
+                        android:src="@mipmap/more_blue" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+</layout>

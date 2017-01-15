@@ -1,0 +1,12 @@
+<resources>
+
+    <declare-styleable name="SlideSelectView">
+        <attr name="circleCount" format="integer"></attr>
+        <attr name="myTextSize" format="integer"></attr>
+        <attr name="isMoveMode" format="boolean"></attr>
+        <attr name="myTextColor" format="color"></attr>
+        <attr name="isShowScale" format="boolean"></attr>
+        <attr name="isShowScaleText" format="boolean"></attr>
+        <attr name="lineColor" format="color"></attr>
+    </declare-styleable>
+</resources>

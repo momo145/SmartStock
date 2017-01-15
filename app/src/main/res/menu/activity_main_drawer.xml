@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_active_stock"
+            android:checked="true"
+            android:icon="@mipmap/active_stock_icon"
+            android:title="活跃股" />
+        <item
+            android:id="@+id/nav_quota_stock"
+            android:icon="@mipmap/quota_stock"
+            android:title="指标股" />
+        <item
+            android:id="@+id/nav_research_stock"
+            android:icon="@mipmap/research_stock"
+            android:title="研报股" />
+        <item
+            android:id="@+id/nav_death_stock"
+            android:icon="@mipmap/death_stock"
+            android:title="敢死队股" />
+
+    </group>
+
+    <item android:title="更多">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="点广告支持开发"
+                android:visible="false" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="建议反馈"
+                android:visible="true" />
+            <item
+                android:id="@+id/nav_future"
+                android:icon="@drawable/ic_menu_send"
+                android:title="即将到来的功能"
+                android:visible="false" />
+
+            <item
+                android:id="@+id/nav_update"
+                android:icon="@mipmap/icon_update"
+                android:title="检查更新" />
+        </menu>
+    </item>
+
+</menu>

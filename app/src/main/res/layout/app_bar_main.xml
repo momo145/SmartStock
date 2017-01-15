@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.sinkinchan.smartstock.activitys.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.AppBarOverlay" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true" />
+
+        <FrameLayout
+            android:id="@+id/fl_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/other_bg"
+            android:clickable="true">
+
+
+            <TextView
+                android:id="@+id/tv_stock_type"
+                style="@style/tv_c8_s2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:text="活跃股:股性相对活跃意味着有资金积极参与推动，据统计：在同样的市场中，股性活跃的品种往往可以为投资者带来更多更丰厚的收益。" />
+
+            <TextView
+                android:id="@+id/tv_show_msg"
+                style="@style/tv_c8_s2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="@dimen/dp10"
+                android:text="点击展开信息"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/btn_msg_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:paddingBottom="@dimen/dp5"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingRight="@dimen/dp10"
+                android:src="@mipmap/icon_pack_up" />
+        </FrameLayout>
+
+
+        <!-- <ProgressBar
+             android:id="@+id/progressBar"
+             style="?android:attr/progressBarStyleHorizontal"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/dp4"
+             android:max="100"
+             android:progressDrawable="@drawable/webview_progress_bar" />-->
+    </android.support.design.widget.AppBarLayout>
+
+
+    <include layout="@layout/content_main" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/md_grey_200"
+        app:layout_behavior="com.app.sinkinchan.smartstock.behaviors.ScrollAwareFABBehavior"
+        app:srcCompat="@mipmap/to_top" />
+
+</android.support.design.widget.CoordinatorLayout>

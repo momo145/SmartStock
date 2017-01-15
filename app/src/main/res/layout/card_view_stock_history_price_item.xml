@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2016-07-08"
+                android:textSize="@dimen/tv_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    style="@style/tv_price_style"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:text="15.5" />
+                <!--上涨的价格和涨幅-->
+                <TextView
+                    android:id="@+id/tv_updown"
+                    style="@style/tv_updown_style"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/tv_price"
+                    android:text="1 6%" />
+
+                <!--当天最高价格-->
+                <TextView
+                    android:id="@+id/tv_height"
+                    style="@style/tv_stock_msg_style"
+                    android:layout_toEndOf="@+id/tv_price"
+                    android:text="高 ----" />
+                <!--当天最低价格-->
+                <TextView
+                    android:id="@+id/tv_low"
+                    style="@style/tv_stock_msg_style"
+                    android:layout_below="@+id/tv_height"
+                    android:layout_toEndOf="@+id/tv_updown"
+                    android:text="低 ----" />
+                <!--开盘价格-->
+                <TextView
+                    android:id="@+id/tv_open"
+                    style="@style/tv_stock_msg_style"
+                    android:layout_toEndOf="@+id/tv_height"
+                    android:text="开 ----" />
+                <!--换手率-->
+                <TextView
+                    android:id="@+id/tv_change"
+                    style="@style/tv_stock_msg_style"
+                    android:layout_below="@+id/tv_open"
+                    android:layout_toEndOf="@+id/tv_low"
+                    android:text="换 ----" />
+                <!--量-->
+                <TextView
+                    android:id="@+id/tv_volume"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_toEndOf="@+id/tv_open"
+                    android:gravity="center|left"
+                    android:text="量 ----"
+                    android:textSize="12sp" />
+                <!--额-->
+                <TextView
+                    android:id="@+id/tv_turnover"
+                    style="@style/tv_stock_msg_style"
+                    android:layout_below="@+id/tv_volume"
+                    android:layout_toEndOf="@+id/tv_change"
+                    android:text="额 ----"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

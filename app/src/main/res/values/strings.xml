@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">智能选股</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string-array name="change_string">
+        <item>5%</item>
+        <item>7%</item>
+        <item>10%</item>
+        <item>15%</item>
+    </string-array>
+    <string-array name="up_string">
+        <item>3%</item>
+        <item>6%</item>
+        <item>8%</item>
+        <item>10%</item>
+    </string-array>
+    <string-array name="lb_string">
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
+    <string name="setting_tv_change_text">换手率大于: %s</string>
+    <string name="setting_tv_up_text">涨幅大于: %s</string>
+    <string name="setting_tv_lb_text">量比大于: %s</string>
+    <string name="reload_text">网络错误,点击重新加载..</string>
+    <string name="no_matching_stocks_text">没有符合条件的股票.</string>
+    <string name="sgcx_title_text">曙光初现</string>
+    <string name="sgcx_message_text">1.曙光初现是有两根颜色相反的K线构成，第一根是中阴线或者是大阴线，第二根是大阳线\n
+        2.第二根的阳线跳空低开，上攻，收盘形成一根大阳线或中阳线，而且其收盘价格达到前一天阴线的一半左右的位置，或者更高的位置\n
+        3.该形态出现在下跌行情中，而且如果是在熊市中，第二根阳线的价格必须是近期的或者13个交易日以来的最低价格。牛市行情对此不做要求\n
+        4.曙光初现形态表明市场中多方力量开始反攻，下跌行情可能要结束了，也就预示着股票要触底回升了，是一个看涨的信号
+    </string>
+    <string name="kzjy_title_text">空中加油</string>
+    <string name="kzjy_message_text">1.何为空中加油？即股票在放量上涨后，出现短暂的横盘整理，再次大幅上涨，这可视为空中加油\n
+        2.空中加油股票成功的特点是：第一，能量保持大幅放大；第二，强势特征明显；第三，短时间内出现暴涨\n
+        3.空中加油形态的股票是最有爆发性的，你只要把握的好，潜伏的时机得当，就可能获得丰厚的利润。但是空中加油的形态也不是每一都能成功形成的，股市的机会与风险同在，这是规律
+    </string>
+    <string name="dialog_title_text">提醒</string>
+    <string name="dialog_cancel_text">取消</string>
+    <string name="dialog_delete_text">删除</string>
+    <string name="delete_stock_msg_text">你确定要移除 %s 吗?移除后今天都不会出现该股.</string>
+    <string name="today_open_text">今 开: %s</string>
+    <string name="today_latest_price_text">最新价格: %s</string>
+    <string name="yesterday_close_text">昨 收: %s</string>
+    <string name="tv_height_text">最 高: %s</string>
+    <string name="tv_low_text">最 低: %s</string>
+    <string name="tv_up_limit_text">涨 停: %s</string>
+    <string name="tv_down_limit_text">跌 停: %s</string>
+    <string name="tv_volume_text">成交量: %s</string>
+    <string name="tv_turnover_text">成交额: %s</string>
+    <string name="tv_change_text">换手率: %s</string>
+    <string name="tv_amplitude_text">振幅: ----</string>
+    <string name="tv_total_equity_text">总股本: %s</string>
+    <string name="tv_qutstanding_shares_text">流通股: %s</string>
+    <string name="tv_pe_text">市盈率: %s</string>
+    <string name="tv_pb_text">市净率: %s</string>
+    <string name="tv_highest_text">高</string>
+    <string name="tv_minimum_text">低</string>
+    <string name="tv_open_text">开</string>
+    <string name="tv_detail_lb_text">量比</string>
+    <string name="tv_detail_totalDealAmount_text">额</string>
+    <string name="tv_detail_change_text">换</string>
+    <string name="tv_detail_up_text">涨幅: %s</string>
+    <string name="tv_detail_upOrDown_text">涨跌: %s</string>
+    <string name="tv_detail_highest_text">最高: %s</string>
+    <string name="tv_detail_minimum_text">最低: %s</string>
+    <string name="tv_detail_dealQuantity_text">成交量: %s</string>
+    <string name="tv_detail_totalDealAmount2_text">成交额: %s</string>
+    <string name="tv_detail_limit_up_text">涨停: %s</string>
+    <string name="tv_detail_limit_down_text">跌停: %s</string>
+    <string name="tv_detail_yesterdayPrice_text">昨收: %s</string>
+    <string name="tv_detail_currentNumber_text">现手: %s</string>
+    <string name="tv_detail_outerDisc_text">外盘: %s</string>
+    <string name="tv_detail_insideDish_text">内盘: %s</string>
+    <string name="tv_detail_volumeRatioIndex_text">量比: %s</string>
+    <string name="tv_detail_income_text">收益: %s</string>
+    <string name="tv_detail_PERatiosDynamic_text">市盈率(动): %s</string>
+    <string name="tv_detail_PERatios_text">市盈率(静): %s</string>
+    <string name="tv_detail_netAssets_text">净资产: %s</string>
+    <string name="tv_detail_PBRatio_text">市净率: %s</string>
+    <string name="tv_detail_generalCapital_text">总股本: %s</string>
+    <string name="tv_detail_capitalization_text">总市值: %s</string>
+    <string name="tv_detail_circulationOfCapitalStock_text">流通股本: %s</string>
+    <string name="tv_detail_circulationOfCapitalization_text">流通市值: %s</string>
+    <string name="tv_detail_money_title_text">今日资金流向 (%s元)</string>
+    <string name="change_percent_text">换 %s%%</string>
+    <string name="high_percent_text">高 %s</string>
+    <string name="low_percent_text">低 %s</string>
+    <string name="open_percent_text">开 %s</string>
+    <string name="volume_percent_text">量 %s</string>
+    <string name="turnover_percent_text">额 %s</string>
+    <string name="reward_points_text">已奖励 %s 积分</string>
+    <string name="ad_msg_text">点击广告下载安装并启动软件即可支持作者的开发</string>
+    <string name="empty_text">---</string>
+    <string name="app_is_downloading_text">智能选股正在下载...</string>
+    <string name="app_download_failure_text">下载失败，点击重新下载</string>
+    <string name="app_download_success_text">下载完成，点击安装</string>
+    <string name="stock_type_text">%1$s:\n%2$s</string>
+    <string name="stock_industry_text">所属行业:%s</string>
+    <string name="stock_city_text">城市:%s</string>
+    <string name="stock_main_product_text">主营产品:</string>
+    <string name="stock_concept_text">所属概念:</string>
+    <string name="stock_handicap_more_text">查看更多</string>
+    <string-array name="stock_handicap_more_array">
+        <item>经营分析</item>
+        <item>股东情况</item>
+        <item>股本结构</item>
+        <item>核心题材</item>
+        <item>公司高管</item>
+        <item>龙虎榜单</item>
+        <item>大宗交易</item>
+    </string-array>
+</resources>

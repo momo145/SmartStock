@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/setting_poup_dialog_bg">
+
+
+    <RelativeLayout
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:gravity="center"
+            android:text="指标"
+            android:textSize="@dimen/s3" />
+
+        <TextView
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@mipmap/iocn_close_black"
+            android:clickable="true"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tv_today_open"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="@string/today_open_text" />
+
+        <TextView
+            android:id="@+id/tv_yesterday_close"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_toEndOf="@+id/tv_today_open"
+            android:text="@string/yesterday_close_text" />
+
+        <TextView
+            android:id="@+id/tv_height"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_today_open"
+            android:text="@string/tv_height_text" />
+
+        <TextView
+            android:id="@+id/tv_low"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_yesterday_close"
+            android:layout_toEndOf="@+id/tv_height"
+            android:text="@string/tv_low_text" />
+
+        <TextView
+            android:id="@+id/tv_up_limit"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_height"
+            android:text="@string/tv_up_limit_text" />
+
+        <TextView
+            android:id="@+id/tv_down_limit"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_low"
+            android:layout_toEndOf="@+id/tv_up_limit"
+            android:text="@string/tv_down_limit_text" />
+
+        <TextView
+            android:id="@+id/tv_volume"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_up_limit"
+            android:text="@string/tv_volume_text" />
+
+        <TextView
+            android:id="@+id/tv_turnover"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_down_limit"
+            android:layout_toEndOf="@+id/tv_volume"
+            android:text="@string/tv_turnover_text" />
+
+        <TextView
+            android:id="@+id/tv_change"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_volume"
+            android:text="@string/tv_change_text" />
+
+        <TextView
+            android:id="@+id/tv_amplitude"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_turnover"
+            android:layout_toEndOf="@+id/tv_change"
+            android:text="@string/tv_amplitude_text" />
+
+        <TextView
+            android:id="@+id/tv_total_equity"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_change"
+            android:text="@string/tv_total_equity_text" />
+
+        <TextView
+            android:id="@+id/tv_qutstanding_shares"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_amplitude"
+            android:layout_toEndOf="@+id/tv_total_equity"
+            android:text="@string/tv_qutstanding_shares_text" />
+
+        <TextView
+            android:id="@+id/tv_pe"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_total_equity"
+            android:text="@string/tv_pe_text" />
+
+        <TextView
+            android:id="@+id/tv_pb"
+            style="@style/tv_quota"
+            android:layout_below="@id/tv_qutstanding_shares"
+            android:layout_toEndOf="@+id/tv_pe"
+            android:text="@string/tv_pb_text" />
+
+        <ImageView
+            android:id="@+id/iv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_loading" />
+
+    </RelativeLayout>
+
+
+</FrameLayout>

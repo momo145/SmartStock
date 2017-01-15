@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="dp120">120dp</dimen>
+    <dimen name="dp117">117dp</dimen>
+    <dimen name="dp116">116dp</dimen>
+    <integer name="slide_select_circle">45</integer>
+</resources>

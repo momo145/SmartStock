@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <!--  <variable
+              name="cap"
+              type="com.sinkinchan.stock.sdk.bean.StockHandicap" />-->
+
+        <variable
+            name="stockUtil"
+            type="com.app.sinkinchan.smartstock.utils.StockUtil" />
+
+        <!--<variable
+            name="stockClassify"
+            type="com.sinkinchan.stock.sdk.bean.StockClassify.Bean" />-->
+        <variable
+            name="modeView"
+            type="com.app.sinkinchan.smartstock.mode.StockHandicapModeView" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp5"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:longClickable="true"
+                android:transitionName="cardView">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <!-- <TextView
+                         android:id="@+id/tv_top_title"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:gravity="center"
+                         android:text="@{cap.name}"
+                         android:textSize="@dimen/tv_16" />-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            style="@style/tv_price_style"
+                            android:layout_width="80dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentStart="true"
+                            android:text="@{modeView.cap.latestPrice ?? @string/empty_text}" />
+                        <!--上涨的价格和涨幅-->
+                        <TextView
+                            android:id="@+id/tv_updown"
+                            style="@style/tv_updown_style"
+                            android:layout_width="80dp"
+                            android:layout_height="20dp"
+                            android:layout_below="@+id/tv_price"
+                            android:text="@{modeView.cap.upOrDown+ ` `+modeView.cap.up}" />
+
+                        <!--当天最高价格-->
+                        <TextView
+                            android:id="@+id/tv_top_height"
+                            style="@style/tv_stock_msg_style"
+                            android:layout_toEndOf="@+id/tv_price"
+                            android:text="@{@string/tv_highest_text+' '+(modeView.cap.highest ?? @string/empty_text)}" />
+                        <!--当天最低价格-->
+                        <TextView
+                            android:id="@+id/tv_top_low"
+                            style="@style/tv_stock_msg_style"
+                            android:layout_below="@+id/tv_top_height"
+                            android:layout_toEndOf="@+id/tv_updown"
+                            android:text="@{@string/tv_minimum_text+' '+(modeView.cap.minimum ?? @string/empty_text)}" />
+                        <!--开盘价格-->
+                        <TextView
+                            android:id="@+id/tv_open"
+                            style="@style/tv_stock_msg_style"
+                            android:layout_toEndOf="@+id/tv_top_height"
+                            android:text="@{@string/tv_open_text+' '+(modeView.cap.open ?? @string/empty_text)}" />
+                        <!--换手率-->
+                        <TextView
+                            android:id="@+id/tv_top_change"
+                            style="@style/tv_stock_msg_style"
+                            android:layout_below="@+id/tv_open"
+                            android:layout_toEndOf="@+id/tv_top_low"
+                            android:text="@{@string/tv_detail_change_text+' '+(modeView.cap.change ?? @string/empty_text)}" />
+                        <!--量-->
+                        <TextView
+                            android:id="@+id/tv_top_volume"
+                            android:layout_width="70dp"
+                            android:layout_height="25dp"
+                            android:layout_toEndOf="@+id/tv_open"
+                            android:gravity="center|left"
+                            android:text="@{@string/tv_detail_lb_text+' '+(modeView.cap.volumeRatioIndex ?? @string/empty_text)}"
+                            android:textSize="12sp" />
+                        <!--额-->
+                        <TextView
+                            android:id="@+id/tv_top_turnover"
+                            style="@style/tv_stock_msg_style"
+                            android:layout_below="@+id/tv_top_volume"
+                            android:layout_toEndOf="@+id/tv_top_change"
+                            android:text="@{@string/tv_detail_totalDealAmount_text+' '+(stockUtil.formatValue(modeView.cap.totalDealAmount) ?? @string/empty_text)}" />
+                    </RelativeLayout>
+
+                    <!--  <TextView
+                          android:id="@+id/tv_message"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="20dp"
+                          android:text="换手率17.88%涨幅3.40%量比1.48"
+                          android:textSize="@dimen/tv_14" />-->
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <!--资金流向-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c8"
+                android:orientation="vertical">
+                <!--基本概况-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:drawableLeft="@mipmap/duanluo"
+                    android:drawablePadding="@dimen/dp5"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp10"
+                    android:text="基本概况"
+                    android:textSize="@dimen/s3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@{modeView.classify==null ? String.format(@string/stock_industry_text,@string/empty_text):String.format(@string/stock_industry_text,modeView.classify.industry)}"
+                        android:transitionName="@string/stock_handicap_more_text" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@{modeView.classify==null ? String.format(@string/stock_city_text,@string/empty_text):String.format(@string/stock_city_text,modeView.classify.city)}"
+                        android:transitionName="@string/stock_handicap_more_text" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp10"
+                    android:text="@{modeView.classify==null ? String.format(@string/stock_main_product_text,@string/empty_text):stockUtil.getProducts(modeView.classify.products)}" />
+
+                <TextView
+                    android:id="@+id/tv_concept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp10"
+                    android:text="@{modeView.classify==null ? String.format(@string/stock_concept_text,@string/empty_text):stockUtil.getConcepts(modeView.classify.concepts)}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:drawableLeft="@mipmap/duanluo"
+                    android:drawablePadding="@dimen/dp5"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp10"
+                    android:text="@{String.format(@string/tv_detail_money_title_text,modeView.cap.unit)}"
+                    android:textSize="@dimen/s3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@{stockUtil.zllr(modeView.cap.zllr)}" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@{stockUtil.zllc(modeView.cap.zllc)}" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp10"
+                    android:text="@{stockUtil.zljlr(modeView.cap.zljlr)}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@{stockUtil.cdd(modeView.cap.cdd)}" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@{stockUtil.dd(modeView.cap.dd)}" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@{stockUtil.zd(modeView.cap.zd)}" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@{stockUtil.xd(modeView.cap.xd)}" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp1"
+                android:background="@color/c8"
+                android:elevation="@dimen/dp2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:drawableLeft="@mipmap/duanluo"
+                    android:drawablePadding="@dimen/dp5"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp10"
+                    android:text="盘口"
+                    android:textSize="@dimen/s3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+
+                    <TextView
+                        android:id="@+id/tv_detail_latestPrice"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/today_latest_price_text,modeView.cap.latestPrice ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_upOrDown"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_up_text,modeView.cap.up ?? @string/empty_text)}" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_up"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_upOrDown_text,modeView.cap.upOrDown ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_change"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_change_text,modeView.cap.change ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_highest"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_highest_text,modeView.cap.highest ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_minimum"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_minimum_text,modeView.cap.minimum ?? @string/empty_text)}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_dealQuantity"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_dealQuantity_text,stockUtil.formatValue(modeView.cap.dealQuantity) ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_totalDealAmount"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_totalDealAmount2_text,stockUtil.formatValue(modeView.cap.totalDealAmount) ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_limit_up"
+                        style="@style/tv_quota_red"
+                        android:text="@{String.format((String)@string/tv_detail_limit_up_text,modeView.cap.limitUp ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_limit_down"
+                        style="@style/tv_quota_green"
+                        android:text="@{String.format((String)@string/tv_detail_limit_down_text,modeView.cap.limitDown ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_yesterdayPrice"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_yesterdayPrice_text,modeView.cap.yesterdayPrice ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_currentNumber"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_currentNumber_text,modeView.cap.currentNumber ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_outerDisc"
+                        style="@style/tv_quota_red"
+                        android:text="@{String.format((String)@string/tv_detail_outerDisc_text,modeView.cap.outerDisc ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_insideDish"
+                        style="@style/tv_quota_green"
+                        android:text="@{String.format((String)@string/tv_detail_insideDish_text,modeView.cap.insideDish ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_volumeRatioIndex"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_volumeRatioIndex_text,modeView.cap.volumeRatioIndex ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_income"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_insideDish_text,modeView.cap.income ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_PERatiosDynamic"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_PERatiosDynamic_text,modeView.cap.PERatiosDynamic ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_PERatios"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_PERatios_text,modeView.cap.PERatios ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_netAssets"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_netAssets_text,modeView.cap.netAssets ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_PBRatio"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_PBRatio_text,modeView.cap.PBRatio ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_generalCapital"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_generalCapital_text,stockUtil.formatValue(modeView.cap.generalCapital) ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_capitalization"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_capitalization_text,stockUtil.formatValue(modeView.cap.capitalization) ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp10">
+
+                    <TextView
+                        android:id="@+id/tv_detail_circulationOfCapitalStock"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_circulationOfCapitalStock_text,stockUtil.formatValue(modeView.cap.circulationOfCapitalStock) ?? @string/empty_text)}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_circulationOfCapitalization"
+                        style="@style/tv_quota"
+                        android:text="@{String.format((String)@string/tv_detail_circulationOfCapitalization_text,stockUtil.formatValue(modeView.cap.circulationOfCapitalization) ?? @string/empty_text)}" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/ic_loading"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+           <!-- <RelativeLayout
+                android:id="@+id/ad_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10">
+
+                <TextView
+                    android:id="@+id/tv_ad_msg"
+                    style="@style/tv_c2_s3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:text="@string/ad_msg_text" />
+
+                <LinearLayout
+                    android:id="@+id/ll_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_below="@+id/tv_ad_msg"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+-->
+        </LinearLayout>
+    </ScrollView>
+</layout>
+
